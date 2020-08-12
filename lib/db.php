@@ -1,13 +1,39 @@
 <?php
-define('DB_HOST','us-cdbr-east-02.cleardb.com');
-define('DB_USER','bd4e426d3f8d6d');
-define('DB_PASS','53bc057c');
-define('DB_NAME','/heroku_75c567d16bc48e4?reconnect=true');
-  try {
-    $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-  }
+//Get Heroku ClearDB connection information
+$cleardb_url      = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb_server   = $cleardb_url["host"];
+$cleardb_username = $cleardb_url["user"];
+$cleardb_password = $cleardb_url["pass"];
+$cleardb_db       = substr($cleardb_url["path"],1);
+
+$active_group = 'default';
+$query_builder = TRUE;
+
+try {
+    $db['default'] = array(
+        'dsn'    => '',
+        'hostname' => $cleardb_server,
+        'username' => $cleardb_username,
+        'password' => $cleardb_password,
+        'database' => $cleardb_db,
+        'dbdriver' => 'PDO',
+        'dbprefix' => '',
+        'pconnect' => FALSE,
+        'db_debug' => (ENVIRONMENT !== 'production'),
+        'cache_on' => FALSE,
+        'cachedir' => '',
+        'char_set' => 'utf8',
+        'dbcollat' => 'utf8_general_ci',
+        'swap_pre' => '',
+        'encrypt' => FALSE,
+        'compress' => FALSE,
+        'stricton' => FALSE,
+        'failover' => array(),
+        'save_queries' => TRUE
+    );
+}
   catch(exception $e) {
     die('Erreur '.$e->getMessage());
   }
+
 ?>
