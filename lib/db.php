@@ -6,34 +6,13 @@ $cleardb_username = $cleardb_url["user"];
 $cleardb_password = $cleardb_url["pass"];
 $cleardb_db       = substr($cleardb_url["path"],1);
 
-$active_group = 'default';
-$query_builder = TRUE;
-
 try {
-    $db['default'] = array(
-        'dsn'    => '',
-        'hostname' => $cleardb_server,
-        'username' => $cleardb_username,
-        'password' => $cleardb_password,
-        'database' => $cleardb_db,
-        'dbdriver' => 'PDO',
-        'dbprefix' => '',
-        'pconnect' => FALSE,
-        'db_debug' => (ENVIRONMENT !== 'production'),
-        'cache_on' => FALSE,
-        'cachedir' => '',
-        'char_set' => 'utf8',
-        'dbcollat' => 'utf8_general_ci',
-        'swap_pre' => '',
-        'encrypt' => FALSE,
-        'compress' => FALSE,
-        'stricton' => FALSE,
-        'failover' => array(),
-        'save_queries' => TRUE
-    );
+    $db = new PDO("mysql:host=".$cleardb_server."; dbname=".$cleardb_db, $cleardb_username, $cleardb_password);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
 }
-  catch(exception $e) {
-    die('Erreur '.$e->getMessage());
-  }
 
 ?>
