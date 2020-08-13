@@ -1,17 +1,35 @@
 <?php
 include '../lib/db.php';
+include '../css/adminOpinion.php';
 session_start();
   if(!isset($_SESSION["username"])){
     header("Location: login.php");
     exit(); 
   }
+  ?>
+<!DOCTYPE html>
+<html class="no-js" lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Daniel</title>
+    <meta name="description" content="Bonjour à vous, voici mon portfolio de développeur web. Si vous etes à la recherche d'un développeur, je vous invite à voir mon site personnel. Bonne journée à vous !">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/styleAdmin.css" />
+</head>
+<body>
+<form action="home.php" method="post">
+    <input type="submit" class="box-button" value="Accueil admin" style="width:150px;"></input>
+</form>
 
+<?php
 $query = $db->prepare("SELECT * FROM tblcontactdata ORDER BY PostingDate DESC");
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 
 echo 
-    "<table border='2'>
+    "<table>
+    <thead>
     <tr>
     <th>ID</th>
     <th>Nom</th>
@@ -22,7 +40,9 @@ echo
     <th>date</th>
     <th>vue (1=oui, 0=non)</th>
     <th>supprimer</th>
-    </tr>";
+    </tr>
+    </thead>
+    <tbody>";
     
     if($query->rowCount() > 0){
         foreach($results as $row){
@@ -35,6 +55,7 @@ echo
             $PostingDate=$row->PostingDate;
             $Is_Read=$row->Is_Read;
            
+            
             echo "<tr>";
             echo "<td>" . $id . "</td>";
             echo "<td>" . $fullname . "</td>";
@@ -66,7 +87,9 @@ echo
                 </td>";
         };
     };
-    
+    echo "</tr>";
+    echo "</tbody>";
+    echo "</table>";
     if(isset($_POST['readed'])){
         
         $id=stripslashes($_REQUEST['id']);
@@ -122,19 +145,5 @@ echo
         header("Refresh: $sec; url=$page");
         };
 ?>
-<!DOCTYPE html>
-<html class="no-js" lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Daniel</title>
-    <meta name="description" content="Bonjour à vous, voici mon portfolio de développeur web. Si vous etes à la recherche d'un développeur, je vous invite à voir mon site personnel. Bonne journée à vous !">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/styleAdmin.css" />
-</head>
-<body>
-<form action="home.php" method="post">
-    <input type="submit" class="box-button" value="Accueil admin" style="width:150px;"></input>
-</form>
 </body>
 </html>

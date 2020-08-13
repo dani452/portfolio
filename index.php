@@ -3,6 +3,7 @@
 <?php include 'lib/contact.php'; ?>
 <?php include 'lib/opinion.php'; ?>
 
+
     <!-- service_area  -->
     <div class="service_area" id="services">
         <div class="container">
@@ -15,7 +16,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-4 col-md-4" data-aos="fade-right">
+                <div class="col-xl-4 col-md-4" data-aos="fade-up">
                     <div class="single_service text-center">
                         <div class="icon">
                             <img src="img/svg_icon/1.svg" alt="">
@@ -33,10 +34,10 @@
                         <p>Application web au design personnalisé et personnalisable à volonté, espace administrateur complet (php symfony).</p>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-4" data-aos="fade-left">
+                <div class="col-xl-4 col-md-4"  data-aos="fade-up">
                     <div class="single_service text-center">
                         <div class="icon">
-                            <img src="img/svg_icon/3.svg" alt="">
+                            <img src="img/svg_icon/3.svg" alt=Votre m"">
                         </div>
                         <h3>Service aux sociétés du web</h3>
                         <p>Participation aux projets web ( application web, API etc) pour les sociétés (php symfony).</p>
@@ -92,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-lg-4" data-aos="fade-right">
+                <div class="col-xl-4 col-md-6 col-lg-4" data-aos="fade-up">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
                             <img src="img/portfolio/3.png" alt="">
@@ -118,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-12 col-lg-4" data-aos="fade-left">
+                <div class="col-xl-4 col-md-12 col-lg-4" data-aos="fade-up">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
                             <img src="img/portfolio/5.png" alt="">
@@ -159,13 +160,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-md-6" data-aos="fade-up-left">
+                <div class="col-xl-6 col-md-6" data-aos="fade-up">
                     <div class="about_img">
                         <div class="color_pattern d-none d-lg-block">
-                            <img src="img/about/color_grid.png" alt="">
+                            <img src="img/about/color_grid.png" alt="image de fond">
                         </div>
                         <div class="my_Pic">
-                                <img src="img/about/about.png" alt="">
+                                <img src="img/about/about.png" alt="photo du développeur">
                         </div>
                     </div>
                 </div>
@@ -183,24 +184,21 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="testmonial_active owl-carousel">
-                            <?php
-                            $reponse = $db->query('SELECT * FROM opinion WHERE Is_Visible=1 LIMIT 3');
-                            while ($donnees = $reponse->fetch())
-                            {
-                            ?>
+                            <?php $reponse = $db->query('SELECT * FROM opinion WHERE Is_Visible=1 LIMIT 3');
+                            while ($donnees = $reponse->fetch()){ ?>
                             <div class="single_carousel">
-                                    <div class="single_testmonial text-center">
-                                            <div class="quote">
-                                                <img src="img/testmonial/quote.svg" alt="Avis client">
+                                <div class="single_testmonial text-center">
+                                    <div class="quote">
+                                        <img src="img/testmonial/quote.svg" alt="Avis client">
+                                    </div>
+                                    <p><?php echo $donnees['Message']; ?>
+                                    <div class="testmonial_author">
+                                            <div class="thumb">
+                                                
                                             </div>
-                                            <p><?php echo $donnees['Message']; ?>
-                                            <div class="testmonial_author">
-                                                <div class="thumb">
-                                                       
-                                                </div>
-                                                <h3><?php echo  $donnees['FullName']; ?></h3>
-                                            </div>
-                                        </div>
+                                        <h3><?php echo  $donnees['FullName'];?></h3>
+                                    </div>
+                                </div>
                             </div>
                             <?php
                             }
@@ -210,56 +208,63 @@
                     </div>
                 </div>
             </div>     
-        </div>
     </div>
         <!-- /testimonial_area  -->
-    <div class="text-center my-5">
-    <form action="opinionTemplate.php" method="post" target="_blank">
-                <button class="btn btn-primary">Laisser un avis</button>
-        </form>
-    </div>
-    
-    
-    <div class="discuss_projects" id="contactForm">
-        <div class="container">
+
+
+        <div class="container my-5">
             <div class="row">
-                <div class="col-xl-12">
-                    <div class="project_text text-center">
-                        <h3>Un projet en tete? Parlons-en.</h3>
-                               
-<!---main--->
-			<div class="main">
-				<div class="main-section">
-				<div class="login-form">
-					<h3>Contact</h3>
-					<p>Nous vous répondrons au plus vite.</p>
-						<span></span>
-					<form name="ContactForm" method="post">
+              <div class="col text-center">
+              <form action="opinionTemplate.php" method="post" target="_blank">
+                <button class="btn btn-primary">Laisser un avis</button>
+              </form>
+              </div>
+            </div>
+          </div>
 
-                        <h4>Nom Complet</h4>
-                        <input type="text" name="name" class="user" placeholder="John Doe" maxlength="20"  autocomplete="off" required>
+        <!-- Default form contact -->
+        <div class="discuss_projects" id="contactForm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="project_text text-center">
+                                <h3>Un projet en tete? Parlons-en.</h3>
+                                    
+                                <div class="main">
+                                    <div class="main-section">
+                                        <div class="login-form">
+                                        <h3>Contact</h3>
+                                        <p>Nous vous répondrons au plus vite.</p>
+                                            <span></span>
+                                            <form name="ContactForm" method="post">
 
-                        <h4>Numéro téléphone</h4>
-                        <input type="text" name="phonenumber" class="phone" placeholder="06 76 34 09 12" maxlength="20" required autocomplete="off">
+                                                <h4>Nom Prénom</h4>
+                                                <input type="text" name="name" class="user" placeholder="John Doe" maxlength="20"  autocomplete="off" required>
 
-                        <h4>Adresse email</h4>
-                        <input type="email" name="emailaddres" class="email" placeholder="Exemple@mail.com" required autocomplete="off">
+                                                <h4>Téléphone</h4>
+                                                <input type="text" name="phonenumber" class="phone" placeholder="06 76 34 09 12" maxlength="20" required autocomplete="off">
 
-                        <h4>Sujet du message</h4>
-                        <input type="text" name="subject" class="email" placeholder="Sujet" maxlength="20" autocomplete="off" required>
+                                                <h4>Email</h4>
+                                                <input type="email" name="emailaddres" class="email" placeholder="Exemple@mail.com" required autocomplete="off">
 
-                        <h4>Votre message</h4>
-                        <textarea class="mess" name="message" placeholder="Message" maxlength="2500" required></textarea>
-                        <input type="submit" value="Envoyer" name="contact">
-                    </form>
-				
-				</div>
-				</div>
-			</div>
+                                                <h4>Sujet</h4>
+                                                <input type="text" name="subject" class="email" placeholder="Sujet" maxlength="20" autocomplete="off" required>
+
+                                                <h4>Message</h4>
+                                                <textarea class="mess" name="message" placeholder="Message" maxlength="2500" required></textarea>
+                                                <input type="submit" value="Envoyer" name="contact">
+                                            </form>
+                                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        <!-- Default form contact -->
+
+
     
 <?php include 'partials/footer.php'; ?>
