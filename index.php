@@ -37,7 +37,7 @@
                 <div class="col-xl-4 col-md-4"  data-aos="fade-up">
                     <div class="single_service text-center">
                         <div class="icon">
-                            <img src="img/svg_icon/3.svg" alt=Votre m"">
+                            <img src="img/svg_icon/3.svg" alt="">
                         </div>
                         <h3>Service aux sociétés du web</h3>
                         <p>Participation aux projets web ( application web, API etc) pour les sociétés (php symfony).</p>
@@ -67,20 +67,7 @@
     <div class="portfolio_image_area">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 col-md-5" data-aos="fade-up">
-                    <div class="single_Portfolio">
-                        <div class="portfolio_thumb">
-                            <img src="img/portfolio/1.png" alt="">
-                        </div>
-                        <a href="img/portfolio/1.png" class="popup popup-image"></a>
-                        <div class="portfolio_hover">
-                            <div class="title">
-                                    <h3>Site web basique (association)</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-7 col-md-7" data-aos="fade-up">
+                <div class="col-xl-6 col-md-6" data-aos="fade-up">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
                             <img src="img/portfolio/2.png" alt="">
@@ -93,7 +80,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-lg-4" data-aos="fade-up">
+                <div class="col-xl-6 col-md-6" data-aos="fade-up">
+                    <div class="single_Portfolio">
+                        <div class="portfolio_thumb">
+                            <img src="img/portfolio/1.png" alt="">
+                        </div>
+                        <a href="img/portfolio/1.png" class="popup popup-image"></a>
+                        <div class="portfolio_hover">
+                            <div class="title">
+                                    <h3>Site web basique (association)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-md-6 col-lg-6" data-aos="fade-up">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
                             <img src="img/portfolio/3.png" alt="">
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-lg-4" data-aos="fade-up">
+                <div class="col-xl-6 col-md-6 col-lg-6" data-aos="fade-up">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
                             <img src="img/portfolio/4.png" alt="">
@@ -119,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-12 col-lg-4" data-aos="fade-up">
+                <div class="col-xl-6 col-md-12 col-lg-6" data-aos="fade-up">
                     <div class="single_Portfolio">
                         <div class="portfolio_thumb">
                             <img src="img/portfolio/5.png" alt="">
@@ -162,9 +162,7 @@
                 </div>
                 <div class="col-xl-6 col-md-6" data-aos="fade-up">
                     <div class="about_img">
-                        <div class="color_pattern d-none d-lg-block">
-                            <img src="img/about/color_grid.png" alt="image de fond">
-                        </div>
+                        
                         <div class="my_Pic">
                                 <img src="img/about/about.png" alt="photo du développeur">
                         </div>
@@ -184,21 +182,24 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="testmonial_active owl-carousel">
-                            <?php $reponse = $db->query('SELECT * FROM opinion WHERE Is_Visible=1 LIMIT 3');
-                            while ($donnees = $reponse->fetch()){ ?>
+                            <?php
+                            $reponse = $db->query('SELECT * FROM opinion WHERE Is_Visible=1 LIMIT 3');
+                            while ($donnees = $reponse->fetch())
+                            {
+                            ?>
                             <div class="single_carousel">
-                                <div class="single_testmonial text-center">
-                                    <div class="quote">
-                                        <img src="img/testmonial/quote.svg" alt="Avis client">
-                                    </div>
-                                    <p><?php echo $donnees['Message']; ?>
-                                    <div class="testmonial_author">
-                                            <div class="thumb">
-                                                
+                                            <div class="single_testmonial text-center">
+                                                <div class="quote">
+                                                    <img src="img/testmonial/quote.svg" alt="Avis client">
+                                                </div>
+                                            <p><?php echo $donnees['Message']; ?>
+                                                <div class="testmonial_author">
+                                                        <div class="thumb">
+                                                            
+                                                        </div>
+                                                    <h3><?php echo  $donnees['FullName'];?> </h3>
+                                                </div>
                                             </div>
-                                        <h3><?php echo  $donnees['FullName'];?></h3>
-                                    </div>
-                                </div>
                             </div>
                             <?php
                             }
@@ -208,9 +209,9 @@
                     </div>
                 </div>
             </div>     
+        
     </div>
         <!-- /testimonial_area  -->
-
 
         <div class="container my-5">
             <div class="row">
@@ -222,49 +223,60 @@
             </div>
           </div>
 
-        <!-- Default form contact -->
-        <div class="discuss_projects" id="contactForm">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="project_text text-center">
-                                <h3>Un projet en tete? Parlons-en.</h3>
-                                    
-                                <div class="main">
-                                    <div class="main-section">
-                                        <div class="login-form">
-                                        <h3>Contact</h3>
-                                        <p>Nous vous répondrons au plus vite.</p>
-                                            <span></span>
-                                            <form name="ContactForm" method="post">
+<!-- Default form contact -->
+    <div class="portfolio_area portfolio_bg_1" id="galerie">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title white_text text-center">
+                        <span>Contact</span>
+                        <h3>Un projet en tete? Parlons-en.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="portfolio_image_area">
+    <div class="discuss_projects" id="contactForm">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="project_text text-center">
+                        <div class="main">
+                            <div class="main-section">
+                                <div class="login-form border border-light">
+                                <h3>Contact</h3>
+                                <p>Nous vous répondrons au plus vite.</p>
+                                    <span></span>
+                                    <form name="ContactForm" method="post">
 
-                                                <h4>Nom Prénom</h4>
-                                                <input type="text" name="name" class="user" placeholder="John Doe" maxlength="20"  autocomplete="off" required>
+                                        <h4>Nom Prénom</h4>
+                                        <input type="text" name="name" class="user" placeholder="John Doe" maxlength="20"  autocomplete="off" required>
 
-                                                <h4>Téléphone</h4>
-                                                <input type="text" name="phonenumber" class="phone" placeholder="06 76 34 09 12" maxlength="20" required autocomplete="off">
+                                        <h4>Téléphone</h4>
+                                        <input type="text" name="phonenumber" class="phone" placeholder="06 76 34 09 12" maxlength="20" required autocomplete="off">
 
-                                                <h4>Email</h4>
-                                                <input type="email" name="emailaddres" class="email" placeholder="Exemple@mail.com" required autocomplete="off">
+                                        <h4>Email</h4>
+                                        <input type="email" name="emailaddres" class="email" placeholder="Exemple@mail.com" required autocomplete="off">
 
-                                                <h4>Sujet</h4>
-                                                <input type="text" name="subject" class="email" placeholder="Sujet" maxlength="20" autocomplete="off" required>
+                                        <h4>Sujet</h4>
+                                        <input type="text" name="subject" class="email" placeholder="Sujet" maxlength="20" autocomplete="off" required>
 
-                                                <h4>Message</h4>
-                                                <textarea class="mess" name="message" placeholder="Message" maxlength="2500" required></textarea>
-                                                <input type="submit" value="Envoyer" name="contact">
-                                            </form>
-                                    
-                                        </div>
-                                    </div>
+                                        <h4>Message</h4>
+                                        <textarea class="mess" name="message" placeholder="Message" maxlength="2500" required></textarea>
+                                        <input type="submit" value="Envoyer" name="contact">
+                                    </form>
+                            
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <!-- Default form contact -->
-
-
+        </div>
+    </div>
+<!-- Default form contact -->
+</div>
+<a id="button_top"></a>
     
 <?php include 'partials/footer.php'; ?>
