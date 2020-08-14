@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Daniel Da Silva</title>
+    <title>Daniel</title>
     <meta name="description" content="Bonjour à vous, voici mon portfolio de développeur web. Si vous etes à la recherche d'un développeur, je vous invite à voir mon site personnel. Bonne journée à vous !">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -77,9 +77,7 @@
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="single_slider  d-flex align-items-center slider_bg_1">
-            <div class="shap_pattern d-none d-lg-block">
-                <img src="img/about/grid.png" alt="">
-            </div>
+            
             <div class="social_links">
                 <ul>
                     <li><a href="https://www.linkedin.com/in/daniel-da-silva-wilder/" target="blank"> <i class="fa fa-linkedin"></i> </a></li>
