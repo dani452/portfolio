@@ -1,4 +1,5 @@
 <?php
+include '../lib/db.php';
   // Initialiser la session
   session_start();
   // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
@@ -7,6 +8,7 @@
     exit(); 
   }
 ?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="fr">
 <head>
@@ -21,6 +23,10 @@
     <div class="sucess">
     <h1>Bienvenue <?php echo strip_tags($_SESSION['username']); ?>!</h1>
     <p>C'est votre espace admin.</p>
+    <?php 
+    $stmt = $db->query('SELECT * FROM stat');
+    $row_count = $stmt->rowCount();
+    echo '<p>Nombre de connection = ' . $row_count . '</p><br>' ?>
     <a href="add_user.php">Ajouter un utilisateur</a> | 
     <a href="avis_client.php">Avis client</a> | 
     <a href="db_contact.php">Contact</a> | 
