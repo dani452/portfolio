@@ -2,6 +2,7 @@
 <?php include 'lib/db.php'; ?>
 <?php include 'lib/contact.php'; ?>
 <?php include 'lib/opinion.php'; ?>
+<?php include 'lib/stat.php'; ?>
 
 
     <!-- service_area  -->

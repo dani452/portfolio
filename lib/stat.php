@@ -5,8 +5,7 @@ include 'lib/db.php';
 
     $sql="INSERT INTO  stat(ip, date) VALUES(:ip,NOW())";
     $query = $db->prepare($sql);
-    $query->bindParam(':ip',$ip,PDO::PARAM_STR);
+    $query->bindParam(':ip',$ip);
     $query->execute();
-    $count = $query->rowCount();
 
 ?> 
