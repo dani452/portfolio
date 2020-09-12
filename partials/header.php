@@ -7,7 +7,7 @@
     <title>Daniel</title>
     <meta name="description" content="Bonjour à vous, voici mon portfolio de développeur web. Si vous etes à la recherche d'un développeur, je vous invite à voir mon site personnel. Bonne journée à vous !">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="google-site-verification" content="S_iq4e_U3bo7yEKnd7g7cowbGVuFEkBQsv3_pHyXiqQ" />
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <!-- Place favicon.ico in the root directory -->
 
