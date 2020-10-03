@@ -133,6 +133,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-6 col-md-12 col-lg-6" data-aos="fade-up">
+                    <div class="single_Portfolio">
+                        <div class="portfolio_thumb">
+                            <img src="img/portfolio/ecommerce.jpg" alt="">
+                        </div>
+                        <a href="img/portfolio/ecommerce.jpg" class="popup popup-image"></a>
+                        <div class="portfolio_hover">
+                            <div class="title">
+                                    <h3>Site e-commerce</h3>
+                            </div>
+                        </div>
+                    </div>
+                <a target = '_blank' href="http://www.lescreationsdeclaire.com">Cliquez ici</a>
+                </div>
             </div>
             <div class="row">
                 <div class="col-xl-12">
